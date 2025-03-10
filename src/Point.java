@@ -39,6 +39,11 @@ public class Point {
     public void setY(double y) {
         this.y = y;
     }
+
+    public Point(Point toCopy){
+        this.x = toCopy.getX();
+        this.y = toCopy.getY();
+    }
 }
 
 

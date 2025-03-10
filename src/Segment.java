@@ -19,8 +19,8 @@ public class Segment {
     }
 
     public Segment(Point start, Point end) {
-        this.start = start;
-        this.end = end;
+        this.start = new Point(start.getX(), start.getY());
+        this.end = new Point(end.getX(), end.getY());
     }
 
     public Segment() {
@@ -30,5 +30,13 @@ public class Segment {
                    double x_end, double y_end){
         this.start = new Point(x_start, y_start);
         this.end = new Point(y_start, y_end);
+    }
+
+    @Override
+    public String toString() {
+        return "Segment{" +
+                "start=" + start +
+                ", end=" + end +
+                '}';
     }
 }
