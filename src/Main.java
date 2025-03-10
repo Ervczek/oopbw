@@ -8,7 +8,7 @@ public class Main {
         p.y = 5;
 
         System.out.println(p.toSvg);
-
+// kom 2
 // komentarz proba
 
     }
