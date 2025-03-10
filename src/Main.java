@@ -3,27 +3,12 @@
 
 public class Main {
     public static void main(String[] args) {
-        Point p = new Point();
-        p.x = 3;
-        p.y = 5;
+        Point p = new Point(0,40);
 
-        System.out.println(p.toSvg);
+        //System.out.println(p.toSvg);
 // kom 2
 // komentarz proba
 
     }
 
-    public String toSvg(){
-        return "<svg height=\"100\" width=\"100\" xmlns=\"http://www.w3.org/2000/svg\">\n" +
-                "  <circle r=\"25\" cx="" +
-                "" +
-                x +
-                "" +
-                cy=" +
-                "" +
-                        y +
-                "" +
-                " fill=\"green\" />\n" +
-                "</svg>\n";
-    }
 }
