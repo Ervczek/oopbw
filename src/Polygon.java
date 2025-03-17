@@ -2,11 +2,9 @@ import java.util.ArrayList;
 
 public class Polygon {
 
+    private Style gangnam;
     private ArrayList<Point> points;
 
-    public Polygon(ArrayList<Point> points) {
-        this.points = points;
-    }
 
     @Override
     public String toString() {
@@ -19,16 +17,32 @@ public class Polygon {
         String beginning = "<svg height=\"220\" width=\"500\" xmlns=\"http://www.w3.org/2000/svg\">\n" +
                 "  <polygon points=\"";
 
-        String middle = "";
-        for (Point p : points) {
-            middle += p.getX() + "," + p.getY() + " ";
+
+        String midlle = "";
+        for (Point p : points){
+            midlle += p.getX() + "," +p.getY() + " ";
         }
 
-            // for(int i=0; i<points.size; i++)
-            //{ Point p = points.get(i); }
-
-        String ending = "\" style=\"fill:lime;stroke:purple;stroke-width:3\" />\n" +
+        String ending =        "\" " +
+                gangnam.toSvg() +
+                "\" />\n" +
                 "</svg>";
-                return beginning + middle + ending;
+        return beginning + midlle + ending;
+    }
+
+    public Style getGangnam() {
+        return gangnam;
+    }
+
+    public void setGangnam(Style gangnam) {
+        this.gangnam = gangnam;
+    }
+
+    public Polygon(ArrayList<Point> points) {
+        this.points = points;
+    }
+    public Polygon(ArrayList<Point> points, Style gangnam) {
+        this.gangnam = gangnam;
+        this.points = points;
     }
 }
