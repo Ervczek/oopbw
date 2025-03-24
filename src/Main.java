@@ -14,32 +14,18 @@ public class Main {
         points.add(new Point(0,0));
         points.add(new Point(20,50));
         points.add(new Point(15, 80));
-        Polygon poly = new Polygon(points, new Style("#FA8072","#00FFFF",2));
+        SvgScene picture = new SvgScene(1000,10000);
+        Shape poly = new Polygon(points, new Style("#FF0000","#00FFFF",2));
+        Shape ellipse = new Circle(new Style("#FF8888","#000000", 3),
+                new Point(200,100),30);
+        picture.getShapes().add(poly);
+        picture.getShapes().add(ellipse);
         try{
             FileWriter fw = new FileWriter("ksztalty.svg");
-            fw.write(poly.toSvg());
+            fw.write(picture.toSvg());
             fw.close();
         }catch (IOException e){
             System.out.println("Not hello");
         }
-        int ch;
-        FileReader fr = null;
-        try
-        {
-            fr = new FileReader("ksztalty.svg");
-        }
-        catch (FileNotFoundException fe)
-        {
-            System.out.println("File not found");
-        }
-
-        try{
-            while((ch=fr.read())!=-1)
-                System.out.print((char)ch);
-            fr.close();
-        }catch (Exception e){
-            System.out.println("Wystąpił błąd");
-        }
     }
 }
-//

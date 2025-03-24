@@ -6,8 +6,8 @@ public abstract class Shape {
     }
 
     public Shape(){
-
     }
+
 
     public Style getGangnam() {
         return gangnam;
@@ -18,5 +18,4 @@ public abstract class Shape {
     }
 
     public abstract String toSvg();
-
 }
