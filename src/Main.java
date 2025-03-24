@@ -26,7 +26,7 @@ public class Main {
         FileReader fr = null;
         try
         {
-            fr = new FileReader("krztalty.svg");
+            fr = new FileReader("ksztalty.svg");
         }
         catch (FileNotFoundException fe)
         {

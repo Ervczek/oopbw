@@ -1,8 +1,7 @@
 import java.util.ArrayList;
 
-public class Polygon {
+public class Polygon extends Shape {
 
-    private Style gangnam;
     private ArrayList<Point> points;
 
 
@@ -30,20 +29,23 @@ public class Polygon {
         return beginning + midlle + ending;
     }
 
-    public Style getGangnam() {
-        return gangnam;
-    }
-
-    public void setGangnam(Style gangnam) {
-        this.gangnam = gangnam;
-    }
-
     public Polygon(ArrayList<Point> points) {
+        super();
         this.points = points;
     }
     public Polygon(ArrayList<Point> points, Style gangnam) {
-        this.gangnam = gangnam;
+        super(gangnam);
         this.points = points;
+    }
+
+    public static Polygon createSquare(Segment s, Style style){
+        ArrayList<Point> points = new ArrayList<>();
+        points.add(s.getStart());
+        points.add(s.getEnd());
+        //Segment perpendicularSegment = s.findPerpendicular();
+        //points.add(perpendicularSegment.getStart());
+        //points.add(perpendicularSegment.getEnd());
+        return new Polygon(points,style);
     }
 }
 //
