@@ -15,10 +15,15 @@ public class Main {
         points.add(new Point(20,50));
         points.add(new Point(15, 80));
         SvgScene picture = new SvgScene(1000,10000);
-        Shape poly = new SolidFilledPolygon(points, "#FF0000");
+//        Shape poly = new SolidFilledPolygon(points, "#FF0000");
 //        Shape ellipse = new Circle(new Style("#FF8888","#000000", 3),
 //                new Point(200,100),30);
-        picture.getShapes().add(poly);
+//        picture.getShapes().add(poly);
+
+        Shape simplePolygon = new Polygon(points);
+        Shape coloredPolygon = new SolidFilledShapeDecorator(simplePolygon, "#0000FF");
+        picture.getShapes().add(coloredPolygon);
+
 //        picture.getShapes().add(ellipse);
         try{
             FileWriter fw = new FileWriter("ksztalty.svg");
